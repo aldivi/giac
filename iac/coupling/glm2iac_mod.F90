@@ -33,8 +33,8 @@ Module glm2iac_mod
 ! Author: T Craig
 
   real*8, pointer, save :: plodata(:,:)
-  real, pointer, save :: plodataf(:,:)
-  real, pointer, save :: glmof(:,:)
+  !real, pointer, save :: plodataf(:,:)
+  !real, pointer, save :: glmof(:,:)
 
 ! !PRIVATE DATA MEMBERS:
 
@@ -81,8 +81,8 @@ contains
     nsize = cdata%i(iac_cdatai_glm_size)
     ! npfts + extra pft + vh1,vh2,sh1,sh2,sh3,grazing
     allocate(plodata(nflds,nsize))
-    allocate(plodataf(nflds,nsize))
-    allocate(glmof(size(glmo,dim=1),size(glmo,dim=2)))
+    !allocate(plodataf(nflds,nsize))
+    !allocate(glmof(size(glmo,dim=1),size(glmo,dim=2)))
     plodata = 0.0
 
 #ifdef DEBUG
@@ -182,12 +182,12 @@ contains
     write(iu,*) trim(subname),' myear = ',myear
 #endif
 
-    plodataf=plodata
-    glmof=glmo
-    call updateannuallanduse(glmof,plodataf,myear)
-!jt    call updateannuallanduse(glmo,plodata,myear)
-    plodata=plodataf
-    glmo=glmof
+    !plodataf=plodata
+    !glmof=glmo
+    ! this is now double precision! adivi; call updateannuallanduse(glmof,plodataf,myear)
+    call updateannuallanduse(glmo,plodata,myear)
+    !plodata=plodataf
+    !glmo=glmof
 
 #ifdef DEBUG
     do j = 1,size(plodata,dim=1)
@@ -256,8 +256,8 @@ contains
 !    iu  = cdata%i(iac_cdatai_logunit)
 !    write(iu,*) trim(subname)
     deallocate(plodata)
-    deallocate(plodataf)
-    deallocate(glmof)
+    !deallocate(plodataf)
+    !deallocate(glmof)
 
   end subroutine glm2iac_final_mod
 

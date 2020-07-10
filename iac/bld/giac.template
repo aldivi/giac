@@ -283,10 +283,10 @@ cp -f \$giactop/glm2iac/surfdata_360x720_potveg.nc .
 cp -f \$giactop/glm2iac/mksrf_landuse_ingrid.nc ./\$mksurfin
 # these are the files for starting in 1850
 #cp -f $giactop/glm2iac/iESM_Ref_CropPast1850_c10142019.nc ./iESM_Init_CropPast.nc
-#cp -f $giactop/glm2iac/surfdata_360x720_mcrop1850_c10142019.nc ./surfdata_360x720_mcrop_init.nc
+#cp -f $giactop/glm2iac/surfdata_360x720_mcrop1850_c07082020.nc ./surfdata_360x720_mcrop_init.nc
 # these are the files for starting in 2015
 cp -f $giactop/glm2iac/iESM_Ref_CropPast2015_c10142019.nc ./iESM_Init_CropPast.nc
-cp -f $giactop/glm2iac/surfdata_360x720_mcrop2015_c10142019.nc ./surfdata_360x720_mcrop_init.nc
+cp -f $giactop/glm2iac/surfdata_360x720_mcrop2015_c07082020.nc ./surfdata_360x720_mcrop_init.nc
 # these are needed as the reference for model years <2000
 cp -f $giactop/glm2iac/surfdata_360x720_mcrop2000_c03062014.nc ./surfdata_360x720_mcrop2000.nc
 cp -f $giactop/glm2iac/iESM_Ref_CropPast2000_c10142019.nc ./iESM_Ref_CropPast2000.nc

@@ -216,20 +216,20 @@ cp -f \$giactop/glm2iac/surfdata_360x720_potveg.nc .
 cp -f \$giactop/glm2iac/mksrf_landuse_ingrid.nc ./\$mksurfin
 # these are the files for starting in 2015
 cp -f $giactop/glm2iac/iESM_Ref_CropPast2015_c10142019.nc ./iESM_Init_CropPast.nc
-cp -f $giactop/glm2iac/surfdata_360x720_mcrop2015_c10142019.nc ./surfdata_360x720_mcrop_init.nc
+cp -f $giactop/glm2iac/surfdata_360x720_mcrop2015_c07082020.nc ./surfdata_360x720_mcrop_init.nc
 
 if (${CONTINUE_RUN} == FALSE) then
     cp -f $giactop/glm2iac/${mksurfout_init} ${mksurfout}_dyn.nc
     cp -f ./iESM_Init_CropPast.nc ./iESM_Dyn_CropPast.nc
     cp -f ./surfdata_360x720_mcrop_init.nc ./surfdata_360x720_mcrop_dyn.nc
 endif
-chmod 666 ./iESM_Dyn_CropPast.nc  ./surfdata_360x720_mcrop_dyn.nc ./iESM_Init_CropPast.nc ./surfdata_360x720_mcrop_init.nc surfdata_360x720_potveg.nc  ${mksurfout}_dyn.nc ./iESM_Ref_CropPast2000.nc ./surfdata_360x720_mcrop2000.nc
+chmod 666 ./iESM_Dyn_CropPast.nc  ./surfdata_360x720_mcrop_dyn.nc ./iESM_Init_CropPast.nc ./surfdata_360x720_mcrop_init.nc surfdata_360x720_potveg.nc  ${mksurfout}_dyn.nc
 
 # suggested namelist items for the LUT files, but they still need the manipulation above
 glm2iac_pftparams = "\$DIN_LOC_ROOT/iac/giac/glm2iac/pftregridparams.txt"
 glm2iac_potveg = "\$DIN_LOC_ROOT/iac/giac/glm2iac/surfdata_360x720_potveg.nc"
 glm2iac_landuse_init = "\$DIN_LOC_ROOT/iac/giac/glm2iac/iESM_Ref_CropPast2015_c10142019.nc"
-glm2iac_surface_init = "\$DIN_LOC_ROOT/iac/giac/glm2iac/surfdata_360x720_mcrop2015_c10142019.nc"
+glm2iac_surface_init = "\$DIN_LOC_ROOT/iac/giac/glm2iac/surfdata_360x720_mcrop2015_c07082020.nc"
 
 
 ## some related namelist settings
@@ -256,7 +256,7 @@ gcam2glm_glumap = "\$DIN_LOC_ROOT/iac/giac/glm/inputs/gcam2glm_mapping.csv"
 
 # glm2iac files
 $DIN_LOC_ROOT/iac/giac/glm2iac/iESM_Ref_CropPast2015_c10142019.nc
-$DIN_LOC_ROOT/iac/giac/glm2iac/surfdata_360x720_mcrop2015_c10142019.nc
+$DIN_LOC_ROOT/iac/giac/glm2iac/surfdata_360x720_mcrop2015_c07082020.nc
 
 # glm files
 $DIN_LOC_ROOT/iac/giac/glm/inputs/hyde_3.0/half_deg_grids/gwatr_850_851_half_degree.nc
