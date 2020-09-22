@@ -253,7 +253,7 @@
 
 ////////////////////////////////////////////////
 // use this to compile for standalone operation
-#define STANDALONE 1
+//#define STANDALONE 1
 ///////////////////////////////////////////////
 
 // use this to output extra stuff to the terminal or to the log file (via printf statements)
